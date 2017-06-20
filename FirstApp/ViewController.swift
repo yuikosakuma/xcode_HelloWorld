@@ -8,10 +8,23 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HelloWorld: UIView{
+    
+    override func drawRect(rect: CGRect) {
+        let attrs = [NSFontAttributeName: UIFont.systemFontOfSize(24)]
+        
+        let str = "Hello, World!"
+        let nsstr = str as NSString
+        nsstr.drawAtPoint(CGPointMake(100, 100), withAttributes:attrs)
+    }
 
+}
+
+class ViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        println("Hello World");
         // Do any additional setup after loading the view, typically from a nib.
     }
 
